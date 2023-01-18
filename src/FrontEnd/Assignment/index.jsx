@@ -7,10 +7,10 @@ const Assignment = () => {
   return (
     <div>
 
-  <Dashboard/>
-  
+      <Dashboard />
+
     </div>
-    
+
   )
 }
 
