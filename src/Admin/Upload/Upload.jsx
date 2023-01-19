@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import AdminSidebar from '../AdminSidebar'
+import AdminSidebar from '../../Admin/Dashboard/adminLeftBar/AdminSidebar'
 import "./Upload.css"
 import UploadBlogs from './UploadBlogs'
 import UploadProduct from './UploadProduct'

@@ -1,6 +1,6 @@
 import React from 'react'
 import "../Dashboard/Dashboard.css"
-import AdminSidebar from '../AdminSidebar'
+import AdminSidebar from '../../Admin/Dashboard/adminLeftBar/AdminSidebar'
 
 const Order = () => {
     return (

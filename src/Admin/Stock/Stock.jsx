@@ -1,6 +1,5 @@
 import React from 'react'
-import AdminSidebar from '../AdminSidebar'
-
+import AdminSidebar from '../../Admin/Dashboard/adminLeftBar/AdminSidebar'
 const Stock = () => {
   return (
     <div>
