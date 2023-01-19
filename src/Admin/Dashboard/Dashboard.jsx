@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import AdminSidebar from '../AdminSidebar'
+import AdminSidebar from '../../Admin/Dashboard/adminLeftBar/AdminSidebar'
 import './Dashboard.css'
 import ViewData from './viewData/ViewData'
 
