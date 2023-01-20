@@ -14,7 +14,7 @@ import Upload from './Admin/Upload/Upload';
 import Stock from './Admin/Stock/Stock';
 import UploadProduct from './Admin/Upload/UploadProduct';
 import UploadBlogs from './Admin/Upload/UploadBlogs';
-
+import axios from 'axios';
 
 function App() {
   const [cartItems, setCartItems] = useState([])
@@ -37,6 +37,7 @@ function App() {
   }
   useEffect(() => {
 
+// axios.get("")
     setTimeout(() => {
       setCartMessage("")
     }, 3500)
