@@ -15,6 +15,7 @@ import Stock from './Admin/Stock/Stock';
 import UploadProduct from './Admin/Upload/UploadProduct';
 import UploadBlogs from './Admin/Upload/UploadBlogs';
 
+
 function App() {
   const [cartItems, setCartItems] = useState([])
   const [countCartItems, setCountCartItems] = useState(0)
@@ -35,6 +36,7 @@ function App() {
     setCartMessage("added to cart")
   }
   useEffect(() => {
+
     setTimeout(() => {
       setCartMessage("")
     }, 3500)
