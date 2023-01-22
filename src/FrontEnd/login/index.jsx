@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import '../login/index.css'
 
 const Login = () => {
-  const navigate=useNavigate
+  const navigate=useNavigate()
   const [inputValue, setInputValue] = useState({
     username: "",
     password: ""
@@ -16,7 +16,7 @@ const Login = () => {
     })
   }
   const handleLoginForm = (e) => {
-    navigate='/Dashboard'
+    navigate('/Dashboard')
   }
   return (
     <div class="container">
@@ -32,21 +32,7 @@ const Login = () => {
             <input type="password" placeholder="Password" name="password" onChange={handleValue} />
           </div>
           <button className="btn solid"> Login </button>
-          <p class="social-text">Or Sign in with social platforms</p>
-          <div class="social-media">
-            <a href="#" class="social-icon">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-google"></i>
-            </a>
-            <a href="#" class="social-icon">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
+          
         </form>
       </div>
       <div class="panels-container">

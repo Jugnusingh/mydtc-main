@@ -9,17 +9,14 @@ const AdminSidebar = () => {
                 <span className="logo_name">Admin</span>
             </div>
             <ul className="nav-links">
-                <li>
+                {/* <li>
                     <NavLink className="links_name" to="/Dashboard">Dashboard</NavLink>
-                </li>
+                </li> */}
                 <li>
                     <NavLink className="links_name" to="/All_Order">All Order</NavLink>
                 </li>
                 <li>
                     <NavLink className="links_name" to="/Upload">Upload</NavLink>
-                </li>
-                <li>
-                    <NavLink className="links_name" to="/Stock">Stock</NavLink>
                 </li>
                 <li>
                     <NavLink className="links_name" to="/">Logout</NavLink>

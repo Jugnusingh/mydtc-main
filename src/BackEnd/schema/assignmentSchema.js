@@ -1,11 +1,13 @@
 const mongoose = require("mongoose");
 
 
-const productSchema = mongoose.Schema({
-    Title:String,
-    Price:Number,
-    Description:String,
-    Category:String
-})
+const assignmentSchema = mongoose.Schema(
+    {
+        Title: String,
+        Price: Number,
+        Description: String,
+        Category: String
+    }
+)
 
-module.exports=mongoose.model("assignments",productSchema)
+module.exports =mongoose.model("assignments", assignmentSchema)

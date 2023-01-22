@@ -8,6 +8,7 @@ const bodyParser = require("body-parser")
 app.use(bodyParser.json())
 const productRoute = require("./api/route/productData")
 const assignmentRoute = require("./api/route/assignment")
+// const { urlencoded } = require("body-parser")
 
 mongoose.connect("mongodb://127.0.0.1:27017/DalalTechnologies",{
     useUnifiedTopology: true,
