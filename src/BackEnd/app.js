@@ -2,12 +2,18 @@ const express= require("express")
 const app= express()
 const mongoose = require("mongoose")
 const bodyParser = require("body-parser")
+const cors = require("cors")
 
 
+
+app.use(cors({
+    origin:"http://localhost:3000"
+}));
 //middlewares
 app.use(bodyParser.json())
 const productRoute = require("./api/route/productData")
 const assignmentRoute = require("./api/route/assignment")
+const loginRoute = require("./api/route/login")
 // const { urlencoded } = require("body-parser")
 
 mongoose.connect("mongodb://127.0.0.1:27017/DalalTechnologies",{
@@ -22,6 +28,7 @@ mongoose.connection.on("connected",(connected)=>{
 })
 app.use("/product",productRoute)
 app.use("/assignment",assignmentRoute)
+app.use("/login",loginRoute)
 
 app.use("/", (req,res)=>{
     res.status(404).json({

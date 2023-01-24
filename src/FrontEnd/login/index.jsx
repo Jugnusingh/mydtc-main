@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 import '../login/index.css'
 
 const Login = () => {
@@ -16,6 +17,8 @@ const Login = () => {
     })
   }
   const handleLoginForm = (e) => {
+    e.preventDefault()
+    axios.post("http://localhost:4000/login",inputValue)
     navigate('/Dashboard')
   }
   return (
@@ -30,9 +33,8 @@ const Login = () => {
           <div class="input-field">
             <i class="fas fa-lock"></i>
             <input type="password" placeholder="Password" name="password" onChange={handleValue} />
-          </div>
+          </div> 
           <button className="btn solid"> Login </button>
-          
         </form>
       </div>
       <div class="panels-container">
