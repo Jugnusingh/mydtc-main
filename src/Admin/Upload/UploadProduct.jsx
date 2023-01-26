@@ -46,7 +46,7 @@ const UploadProduct = () => {
                     <label for="images" className="drop-container">
                         <span className="drop-title">Drop files here</span>
                         or
-                        <input type="file" id="images" accept="image/*" required name="image" value={}onClick={imageUpload}/>
+                        <input type="file" id="images" accept="image/*" required name="image" />
                     </label>
                     <h3>Upload Product Pdf</h3>
                     <label for="images" className="drop-container">
