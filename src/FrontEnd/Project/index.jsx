@@ -3,6 +3,7 @@ import Card from '../Card'
 import '../../../src/index.css'
 
 const Project = ({ data, onAdd, cartMessage }) => {
+  console.log(data,"Project component")
   const [product, setProduct] = useState(data)
   const searchProduct = (item) => {
     const result = data.filter((x) => {

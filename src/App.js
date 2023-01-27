@@ -20,10 +20,11 @@ function App() {
   const [cartItems, setCartItems] = useState([])
   const [countCartItems, setCountCartItems] = useState(0)
   const [cartMessage, setCartMessage] = useState()
-  const onRemove = (curElemt) => {  
-    setCartItems((cartItems.filter((x) => x.id!==curElemt.id )))
-    setCountCartItems(countCartItems-curElemt.qty) 
-}
+  const [productData, setProductData] = useState([])
+  const onRemove = (curElemt) => {
+    setCartItems((cartItems.filter((x) => x.id !== curElemt.id)))
+    setCountCartItems(countCartItems - curElemt.qty)
+  }
   const onAdd = (item) => {
     const itemExist = cartItems.find((x) => x.id === item.id)
     if (itemExist) {
@@ -35,31 +36,38 @@ function App() {
     setCountCartItems(countCartItems + 1)
     setCartMessage("added to cart")
   }
-  useEffect(() => {
-
-// axios.get("")
-    setTimeout(() => {
-      setCartMessage("")
-    }, 3500)
+  
+const getProductData = ()=>{
+  axios.get("http://localhost:4000/Product")
+  .then((result)=>{
+    setProductData(result.data.productData)
   })
+}
+   
+  
+    
+    useEffect(() => {
+      getProductData()
+  },[])
   return (
     <div>
       <Navbar countCartItems={countCartItems} />
       <Routes>
 
-        <Route exact path='/' element={<Home data={data} />} />
+        <Route exact path='/' element={<Home data={productData} />} />
         <Route exact path='/Assignments' element={<Assignment />} />
         <Route exact path='/Contact' element={<Contact />} />
-        <Route exact path="/cart" element={<Cart cartItems={cartItems} data={data} onRemove={onRemove} countCartItems={countCartItems}  />} />
-        <Route exact path="/Project" element={<Project data={data}  onAdd={onAdd} cartMessage={cartMessage} />} />
+        <Route exact path="/cart" element={<Cart cartItems={cartItems} data={productData} onRemove={onRemove} countCartItems={countCartItems} />} />
+
+        <Route exact path="/Project" element={<Project data={productData} onAdd={onAdd} cartMessage={cartMessage} />} />
         <Route exact path="/Login" element={<Login />} />
-        <Route exact path="/Dashboard" element={<Dashboard/>} />
-        <Route exact path="/All_Order" element={<Order/>} />
-        <Route exact path="/Upload" element={<Upload/>} />
-        <Route exact path="/Stock" element={<Stock/>} />
-        <Route exact path="/UploadProduct" element={<UploadProduct/>} />
-        <Route exact path="/UploadBlogs" element={<UploadBlogs/>} />
-      
+        <Route exact path="/Dashboard" element={<Dashboard />} />
+        <Route exact path="/All_Order" element={<Order />} />
+        <Route exact path="/Upload" element={<Upload />} />
+        <Route exact path="/Stock" element={<Stock />} />
+        <Route exact path="/UploadProduct" element={<UploadProduct />} />
+        <Route exact path="/UploadBlogs" element={<UploadBlogs />} />
+
       </Routes>
     </div>
   );

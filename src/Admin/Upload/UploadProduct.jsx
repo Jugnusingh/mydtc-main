@@ -6,14 +6,16 @@ import "./UploadProduct.css"
 
 const UploadProduct = () => {
     const [pdf, setPdf] = useState("")
+    const [allUploadData, setallUploadData] = useState("")
     const handlechange = (e) => {
         console.log(e.target.files)
         setPdf(e.target.files)
     }
 
     const handlepdfapi = () => {
-        const url = ""
+        const url = "http://localhost:4000/upload/"
         const formData = new FormData()
+        console.log(formData)
         formData.append('pdf,pdf')
         axios.post(url, formData).then((res => {
             console.log(res)
@@ -24,7 +26,7 @@ const UploadProduct = () => {
         <div >
             <AdminSidebar />
             <div className="upload_container">
-                <form>
+                <form action=''>
                     <div className='fm-div'>
                         <div className="group">
                             <input type="text" required />
