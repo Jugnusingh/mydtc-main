@@ -7,7 +7,7 @@ import Contact from './FrontEnd/Contact';
 import Cart from './FrontEnd/Cart';
 import Project from './FrontEnd/Project';
 import Login from './FrontEnd/login';
-import data from '../src/BackEnd/data'
+
 import Dashboard from './Admin/Dashboard/Dashboard';
 import Order from './Admin/Order/Order';
 import Upload from './Admin/Upload/Upload';
