@@ -4,8 +4,6 @@ import { MdDelete } from 'react-icons/md';
 import { Scrollbars } from "react-custom-scrollbars-2";
 
 const Cart_LayOut = ({ data,onRemove, countCartItems }) => {
-  
-   
     const totalAmount=  data.reduce((total,item)=>total+item.Price*item.qty,0)
     return (
         <>
@@ -15,7 +13,6 @@ const Cart_LayOut = ({ data,onRemove, countCartItems }) => {
                     <div className='left-div'>
                         <Scrollbars>
                             {data.map((curElemt) => {
-
                                 return (
                                     <>
                                         <div className='items-div' key={curElemt.id}>

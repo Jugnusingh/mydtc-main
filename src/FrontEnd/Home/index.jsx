@@ -1,14 +1,14 @@
 import React from 'react'
 
-
-
-const Home = (props) => {
-  const {data}=props
+const Home  = () => {
   return (
-    <div>
-    
-    </div>
+    <div> 
+      
+      home 
+      
+      
+       </div>
   )
 }
 
-export default Home
+export default Home 

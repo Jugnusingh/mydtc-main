@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 import Card from '../Card'
 import '../../../src/index.css'
 
-const Project = ({ data, onAdd, cartMessage }) => {
-  console.log(data,"Project component")
-  const [product, setProduct] = useState(data)
+const Project = ({ productData, onAdd, cartMessage }) => {
+  const [product, setProduct] = useState(productData)
   const searchProduct = (item) => {
-    const result = data.filter((x) => {
+    const result = product.filter((x) => {
       return x.Category === item
     })
     setProduct(result)
@@ -50,7 +49,7 @@ const Project = ({ data, onAdd, cartMessage }) => {
             <li>3rd-Sem</li>
             <li>4th-Sem</li>
             </ul>
-            <button className='btn-mca' onClick={() => { setProduct(data) }}>All</button>
+            <button className='btn-mca' onClick={() => { setProduct(product) }}>All</button>
             <h2>Project</h2>
             <button className='btn-mca' onClick={() => { searchProduct("MCA Project") }}>MCA-Project</button>
             <ul>
@@ -61,7 +60,7 @@ const Project = ({ data, onAdd, cartMessage }) => {
             </ul>
           </div>
           <div className='card-right-body'>
-            <Card data={data} onAdd={onAdd} product={product} cartMessage={cartMessage} />
+            <Card data={productData} onAdd={onAdd} product={product} cartMessage={cartMessage} />
           </div>
         </div>
 

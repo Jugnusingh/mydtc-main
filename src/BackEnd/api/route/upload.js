@@ -1,20 +1,13 @@
-const express = require('express')
-const multer = require('multer')
-const app = express()
+// const express = require(express)
+// const router = express.Router()
+// const Images = require("../../schema/imageSchema")
 
-const Upload = multer({
-    storage: multer.diskStorage({
-        destination: function (req, file, cb) {
-            cb(null, "upload")
-        },
-        filename: function (req, file, cb) {
-            cb(null, file.fieldname + "-" + Date.now() + ".png")
-        }
-    })
+// router.get("/images",(req,res)=>{
+//     console.log(req)
+// //    const saveImg = new imgModel({
 
-}).single("user_file")
-app.post("/public/Images", Upload, (req, resp) => {
-    resp.send('file uploaded')
+// //    })
 
-})
-app.listen(4000);
+// })
+
+// module.exports = router

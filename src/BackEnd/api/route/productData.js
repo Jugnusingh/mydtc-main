@@ -39,5 +39,27 @@ router.get("/Product", (req, res) => {
             })
         })
 })
+router.post("/", (req, res) => {
+console.log(req,"hello")
+    const product = new Product({
+        Title: req.body.Title,
+        Price: req.body.Price,
+        Description: req.body.Description,
+        Category: req.body.Category,
+        Image:req.body.Image
+    })
+    product.save()
+        .then((result) => {
+            console.log(result)
+            res.status(200).json({
+                newProduct: result
+            })
+        }).catch((error) => {
+            console.log(error)
+            res.status(500).json({
+                error: error
+            })
+        })
+})
 
 module.exports = router
