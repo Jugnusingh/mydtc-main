@@ -1,13 +1,17 @@
-// const express = require(express)
-// const router = express.Router()
-// const Images = require("../../schema/imageSchema")
+// const express = require('express')
+// const multer = require('multer')
+// const app = express()
 
-// router.get("/images",(req,res)=>{
-//     console.log(req)
-// //    const saveImg = new imgModel({
+// const upload = multer({
+//     storage: multer.diskStorage({
+//         destination: function (req, file, cb) {
+//             cb(null, "upload")
+//         },
+//         filename: function (req, file, cb) {
+//             cb(null, file.fieldname + "-" + Date.now() + ".png")
+//         }
+//     })
 
-// //    })
+// }).single("user_file")
 
-// })
-
-// module.exports = router
+// module.exports = upload

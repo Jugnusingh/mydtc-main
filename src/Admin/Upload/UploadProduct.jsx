@@ -1,9 +1,10 @@
-import axios from 'axios'
-// import e from 'cors'
+
+
 import React from 'react'
 import { useState } from 'react'
 import AdminSidebar from '../../Admin/Dashboard/adminLeftBar/AdminSidebar'
 import Upload from './Upload'
+import axios from 'axios'
 import "./UploadProduct.css"
 
 const UploadProduct = () => {
@@ -31,28 +32,27 @@ const UploadProduct = () => {
     // }
 
     const submitHandler = (e) => {
-        
-
-        const title = e.target.title.value;
-        const price = e.target.num.value;
-        const textarea = e.target.textarea.value;
-        const category = e.target.category.value;
-        const image = e.target.image.value
-        const pdf = e.target.image.value
-        axios.post("https://localhost:4000/product",
+e.preventDefault()
+        const Title = e.target.Title.value;
+        const Price = e.target.Price.value;
+        const Description = e.target.Textarea.value;
+        const Category = e.target.Category.value;
+        const Image = e.target.Image.value
+        console.log(Image,"myImage")
+        const Pdf = e.target.Pdf.value
+        axios.post("http://localhost:4000/product",
             {
-                title,
-                price,
-                textarea,
-                category,
-                image,
-                pdf
+                Title,
+                Price,
+                Description,
+                Category,
+                Image,
+                Pdf
 
             })
             .then((res) => {
                 console.log(res)
             })
-        e.target.reset()
             .catch(error => {
                 console.log(error)
             })
@@ -76,24 +76,24 @@ const UploadProduct = () => {
                     <div className='dv-fm'>
                         <div className='fm-div'>
                             <div className="group">
-                                <input type="text" name='title' required />
+                                <input type="text" name='Title' value="hello"  />
                                 <span className="highlight"></span>
                                 <span className="bar"></span>
                                 <label>Title</label>
                             </div>
                             <div className="group">
-                                <input type="number" name='num' required />
+                                <input type="number" name='Price' value="30"  />
                                 <span className="highlight"></span>
                                 <span className="bar"></span>
                                 <label>Price</label>
                             </div>
                             <div className="group">
-                                <textarea name='textarea' className="textar" placeholder='Description' ></textarea>
+                                <textarea name='Textarea' className="textar" placeholder='Description' value="I am learning" ></textarea>
                                 <span className="highlight"></span>
                                 <span className="bar"></span>
                             </div>
                             <div className="select">
-                                <select name='category' classname="format" id="format">
+                                <select name='Category' classname="format" id="format">
                                     <option selected disabled>Select Your Category:</option>
                                     <option value="MCA_New">MCA_New</option>
                                     <option value="BCA">BCA</option>
@@ -109,13 +109,13 @@ const UploadProduct = () => {
                         <div className='upload-div'>
                             <h3>Upload Images </h3>
                             <div className="group">
-                                <input type="file" name="image" required />
+                                <input type="file" name="Image"  />
                                 <span className="highlight"></span>
                                 <span className="bar"></span>
                             </div>
                             <h3>Upload Product Pdf </h3>
                             <div className="group">
-                                <input type="file" name="pdf" required />
+                                <input type="file" name="Pdf"  />
                                 <span className="highlight"></span>
                                 <span className="bar"></span>
                             </div>
