@@ -1,3 +1,4 @@
+
 select {
    -webkit-appearance: none;
    -moz-appearance: none;
@@ -31,11 +32,7 @@ select::-ms-expand {
    overflow: hidden;
    border-radius: .25em;
 }
-.upload-div{
 
-justify-content: center;
-
-}
 .select::after {
    content: '\25BC';
    position: absolute;
@@ -72,26 +69,11 @@ justify-content: center;
 
 .upload_container {
    font-family: 'Roboto';
-   width: 1075px;
-   margin-left: 250px;
+   width: 600px;
+   margin: 30px auto 0;
    display: block;
    background: #FFF;
    padding: 10px 50px 50px;
-   
-   height: inherit;
-   border-radius: 15px;
-}
-.dv-fm{
-display: flex;
-justify-content: center;
-margin-top: 40px;
-}
-.fm-div{
-
-height: 600px;
-width: 400px;
-justify-items: center;
-   
 }
 
 h2 {
@@ -218,7 +200,6 @@ input:focus~.highlight {
 textar:focus {
    outline: none;
 }
-
 /* active state */
 textar:focus~label,
 textar:valid~label {

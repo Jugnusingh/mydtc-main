@@ -17,8 +17,15 @@ const Login = () => {
     })
   }
   const handleLoginForm = (e) => {
+    
     e.preventDefault()
     axios.post("http://localhost:4000/login",inputValue)
+    .then((res)=>{
+      
+      console.log(res,"dsfasdasdf")
+    }).catch((error)=>{
+      console.log(error)
+    })
     navigate('/Dashboard')
   }
   return (

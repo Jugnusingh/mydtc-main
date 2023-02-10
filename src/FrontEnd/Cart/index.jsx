@@ -2,7 +2,6 @@ import React from 'react'
 import Cart_LayOut from './Cart_LayOut'
 import './index.css'
 const Cart = ({ cartItems,onRemove,countCartItems}) => {
-  console.log(cartItems,"myCart")
   return (
     <div>
       {

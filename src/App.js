@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './FrontEnd/Header/Navbar';
 import { Route, Routes } from 'react-router-dom'
 import Home from './FrontEnd/Home';
+import Blogs from './FrontEnd/Blogs';
 import Contact from './FrontEnd/Contact';
 import Cart from './FrontEnd/Cart';
 import Project from './FrontEnd/Project';
@@ -13,7 +14,6 @@ import Stock from './Admin/Stock/Stock';
 import UploadProduct from './Admin/Upload/UploadProduct';
 import UploadBlogs from './Admin/Upload/UploadBlogs';
 import axios from 'axios';
-import Blogs from './FrontEnd/Blogs';
 
 function App() {
   const [cartItems, setCartItems] = useState([])
@@ -57,7 +57,7 @@ function App() {
       <Navbar countCartItems={countCartItems} />
       <Routes>
         <Route exact path='/' element={<Home/>} />
-        <Route exact path='/Assignments' element={<Blogs />} />
+        <Route exact path='/Blogs' element={<Blogs />} />
         <Route exact path='/Contact' element={<Contact />} />
         <Route exact path="/cart" element={<Cart cartItems={cartItems} data={productData} onRemove={onRemove} countCartItems={countCartItems} />} />
         <Route exact path="/Project" element={<Project productData={productData} onAdd={onAdd} cartMessage={cartMessage} />} />
