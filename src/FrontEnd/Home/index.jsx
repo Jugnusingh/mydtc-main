@@ -6,7 +6,7 @@ const Home = (props) => {
   const {data}=props
   return (
     <div>
-    hello
+    hello home 
     </div>
   )
 }
