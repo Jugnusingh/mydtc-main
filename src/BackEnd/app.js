@@ -6,6 +6,7 @@ const cors = require("cors")
 
 
 
+
 app.use(cors({
     origin:"http://localhost:3000"
 }));
@@ -14,7 +15,7 @@ app.use(bodyParser.json())
 const productRoute = require("./api/route/productData")
 const assignmentRoute = require("./api/route/assignment")
 const loginRoute = require("./api/route/login")
-
+const ImageRoute= require("./api/route/imageSlider")
 // const uploadRoute = require("./api/route/upload")
 // const { urlencoded } = require("body-parser")
 mongoose.connect("mongodb://127.0.0.1:27017/DalalTechnologies",{
@@ -30,6 +31,7 @@ mongoose.connection.on("connected",(connected)=>{
 app.use("/product",productRoute)
 app.use("/assignment",assignmentRoute)
 app.use("/login",loginRoute)
+app.use("/image",ImageRoute)
 // app.use("/upload",uploadRoute)
 
 app.use("/", (req,res)=>{

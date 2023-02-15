@@ -15,11 +15,13 @@ import UploadProduct from './Admin/Upload/UploadProduct';
 import UploadBlogs from './Admin/Upload/UploadBlogs';
 import axios from 'axios';
 
+
 function App() {
   const [cartItems, setCartItems] = useState([])
   const [countCartItems, setCountCartItems] = useState(0)
   const [cartMessage, setCartMessage] = useState()
   const [productData, setProductData] = useState([])
+  const [sliderData, setSliderData] = useState([]);
   console.log(cartItems,"cartItems")
 
   const onRemove = (curElemt) => {
@@ -52,11 +54,27 @@ function App() {
     localStorage.setItem("localProductData", JSON.stringify(productData))
   }, [])
 
+  const getSliderData = () => {
+    axios.get("http://localhost:4000/image")
+      .then((result) => {
+        setSliderData(result.data.sliderData)
+      }).catch(error => {
+        console.log(error, "slider Error")
+      })
+  }
+
+  useEffect(() => {
+    getSliderData()
+    localStorage.setItem("localProductData", JSON.stringify(sliderData))
+  }, [])
+
+
+
   return (
     <div>
       <Navbar countCartItems={countCartItems} />
       <Routes>
-        <Route exact path='/' element={<Home/>} />
+        <Route exact path='/' element={<Home sliderData={sliderData}/>} />
         <Route exact path='/Blogs' element={<Blogs />} />
         <Route exact path='/Contact' element={<Contact />} />
         <Route exact path="/cart" element={<Cart cartItems={cartItems} data={productData} onRemove={onRemove} countCartItems={countCartItems} />} />
