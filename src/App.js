@@ -22,7 +22,7 @@ function App() {
   const [cartMessage, setCartMessage] = useState()
   const [productData, setProductData] = useState([])
   const [sliderData, setSliderData] = useState([]);
-  console.log(cartItems,"cartItems")
+  // console.log(sliderData,"sliderData")
 
   const onRemove = (curElemt) => {
     setCartItems((cartItems.filter((x) => x._id !== curElemt._id)))
@@ -57,7 +57,8 @@ function App() {
   const getSliderData = () => {
     axios.get("http://localhost:4000/image")
       .then((result) => {
-        setSliderData(result.data.sliderData)
+        console.log(result,"sliderData")
+        setSliderData(result.data.imageData)
       }).catch(error => {
         console.log(error, "slider Error")
       })
@@ -65,7 +66,7 @@ function App() {
 
   useEffect(() => {
     getSliderData()
-    localStorage.setItem("localProductData", JSON.stringify(sliderData))
+    // localStorage.setItem("localProductData", JSON.stringify(sliderData))
   }, [])
 
 

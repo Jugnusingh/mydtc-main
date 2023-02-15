@@ -1,12 +1,11 @@
 const express = require("express")
 const router = express.Router()
 const Image = require("../../schema/ImageSlider")
-
-
 router.get("/", async(req, res) => {
-    console.log(req,res,"dfads")
+    console.log(req,"dfads")
     Image.find()
         .then((result) => {
+           console.log(result,"sachin")
             res.status(200).json({
                 imageData: result
             })
@@ -15,7 +14,6 @@ router.get("/", async(req, res) => {
             res.status(200).json({
                 error:error
             })
-
         })
 })
 router.post("/", (req, res) => {
