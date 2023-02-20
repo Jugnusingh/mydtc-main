@@ -20,6 +20,9 @@ const ImageRoute = require("./api/route/imageSlider")
 // const uploadRoute = require("./api/route/upload")
 // const { urlencoded } = require("body-parser")
 
+mongoose.connect("mongodb+srv://Gazal:Gazal%4017flt@cluster0.gu7qtpr.mongodb.net/DalalTechnologies", {
+
+
 
 // Database connect
 mongoose.connect("mongodb://127.0.0.1:27017/DalalTechnologies",{
@@ -28,8 +31,9 @@ mongoose.connect("mongodb://127.0.0.1:27017/DalalTechnologies",{
   })
 mongoose.connection.on("error",(error)=>{
     console.log("Error DB is not connected") 
-=======
+
 mongoose.connect("mongodb+srv://Gazal:Gazal%4017flt@cluster0.gu7qtpr.mongodb.net/test", {
+
     useNewUrlParser: true,
     // useCreateIndex: true,    
     useUnifiedTopology:true,
