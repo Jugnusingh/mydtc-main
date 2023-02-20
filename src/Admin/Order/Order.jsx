@@ -6,10 +6,10 @@ const Order = () => {
     return (
       <div>
          <AdminSidebar/>
-                        <div class="title">All order</div>
-                        <div class="sales-details">
-                            <ul class="details">
-                                <li class="topic">Date</li>
+                        <div className="title">All order</div>
+                        <div className="sales-details">
+                            <ul className="details">
+                                <li className="topic">Date</li>
                                 <li><a href="#">02 Jan 2021</a></li>
                                 <li><a href="#">02 Jan 2021</a></li>
                                 <li><a href="#">02 Jan 2021</a></li>
@@ -20,8 +20,8 @@ const Order = () => {
                                 <li><a href="#">02 Jan 2021</a></li>
                                 <li><a href="#">02 Jan 2021</a></li>
                             </ul>
-                            <ul class="details">
-                                <li class="topic">Customer</li>
+                            <ul className="details">
+                                <li className="topic">Customer</li>
                                 <li><a href="#">Alex Doe</a></li>
                                 <li><a href="#">David Mart</a></li>
                                 <li><a href="#">Roe Parter</a></li>
@@ -32,8 +32,8 @@ const Order = () => {
                                 <li><a href="#">Rexel Mags</a></li>
                                 <li><a href="#">Tiana Loths</a></li>
                             </ul>
-                            <ul class="details">
-                                <li class="topic">Email Id</li>
+                            <ul className="details">
+                                <li className="topic">Email Id</li>
                                 <li><a href="#">abc@gmail.com</a></li>
                                 <li><a href="#">abc@gmail.com</a></li>
                                 <li><a href="#">abc@gmail.com</a></li>
@@ -44,8 +44,8 @@ const Order = () => {
                                 <li><a href="#">abc@gmail.com</a></li>
                                 <li><a href="#">abc@gmail.com</a></li>
                             </ul>
-                            <ul class="details">
-                                <li class="topic">Status</li>
+                            <ul className="details">
+                                <li className="topic">Status</li>
                                 <li><a href="#">Delivered</a></li>
                                 <li><a href="#">Pending</a></li>
                                 <li><a href="#">Returned</a></li>
@@ -56,8 +56,8 @@ const Order = () => {
                                 <li><a href="#">Pending</a></li>
                                 <li><a href="#">Delivered</a></li>
                             </ul>
-                            <ul class="details">
-                                <li class="topic">Total</li>
+                            <ul className="details">
+                                <li className="topic">Total</li>
                                 <li><a href="#">₹204.98</a></li>
                                 <li><a href="#">₹24.55</a></li>
                                 <li><a href="#">₹25.88</a></li>

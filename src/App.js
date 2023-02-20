@@ -22,16 +22,20 @@ function App() {
   const [countCartItems, setCountCartItems] = useState(0)
   const [cartMessage, setCartMessage] = useState()
   const [productData, setProductData] = useState([])
-  console.log(cartItems,"cartItems")
-
+console.log(productData,"data coming ")
   const onRemove = (curElemt) => {
-    setCartItems((cartItems.filter((x) => x._id !== curElemt._id)))
+    setCartItems((cartItems.filter((x) => {
+      return x._id !== curElemt._id
+    })
+    ))
     setCountCartItems(countCartItems - curElemt.qty)
   }
   const onAdd = (item) => {
-    console.log(item,"item")
-    const itemExist = cartItems.find((x) => x._id === item._id)
-    console.log(itemExist,"itemExist")
+    console.log(item, "item")
+    const itemExist = cartItems.find((x) => {
+      return x._id === item._id
+    })
+    console.log(itemExist, "itemExist")
     if (itemExist) {
       setCartItems(cartItems.map((x) => x._id === item._id ? { ...itemExist, qty: itemExist.qty + 1 } : x))
     }
@@ -45,20 +49,28 @@ function App() {
     axios.get("http://localhost:4000/Product")
       .then((result) => {
         setProductData(result.data.productData)
+        localStorage.setItem("localData", JSON.stringify(productData))
       }).catch(error => {
         console.log(error, "ProductData Error")
       })
   }
+
+  // useEffect(()=>{
+  //   const data = localStorage.getItem("localProductData");
+  //   if(data !=null){setProductData(JSON.parse(data))}
+  // },[])
   useEffect(() => {
     getProductData()
-    localStorage.setItem("localProductData", JSON.stringify(productData))
+    // localStorage.setItem("localData", JSON.stringify(productData))
+
+   
   }, [])
 
   return (
     <div>
       <Navbar countCartItems={countCartItems} />
       <Routes>
-        <Route exact path='/' element={<Home/>} />
+        <Route exact path='/' element={<Home />} />
         <Route exact path='/Blogs' element={<Blogs />} />
         <Route exact path='/Contact' element={<Contact />} />
         <Route exact path="/cart" element={<Cart cartItems={cartItems} data={productData} onRemove={onRemove} countCartItems={countCartItems} />} />
