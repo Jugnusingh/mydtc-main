@@ -3,7 +3,7 @@ const router = express.Router()
 const LoginRoute = require("../../schema/loginSchema")
 
 
-router.post("/login",(req,res)=>{
+router.post("/",(req,res)=>{
     console.log(req.body.username)
     const loginRoute = new LoginRoute({
         Username: req.body.username,

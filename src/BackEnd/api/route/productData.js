@@ -18,7 +18,7 @@ router.get("/", async(req, res) => {
 
         })
 })
-router.post("/Product", (req, res) => {
+router.post("/", (req, res) => {
 
     const product = new Product({
         Title: req.body.Title,
