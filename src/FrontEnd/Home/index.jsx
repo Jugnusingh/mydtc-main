@@ -1,14 +1,13 @@
-import React from 'react'
+import React from "react";
+import ImageSlider from "../ImageSlider/Index";
 
 
-
-const Home = (props) => {
-  const {data}=props
+const Home = ({sliderData}) => {
   return (
     <div>
-    hello home 
+      <ImageSlider sliderData={sliderData} />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
