@@ -19,6 +19,7 @@ const Project = ({ productData, onAdd, cartMessage }) => {
         <div className='card-body'>
           <div className='card-left-body'>
             <h2>Assignment</h2>
+
             <button className='btn-mca' onClick={() => { searchProduct("MCA") }}>MCA-NEW</button>
             {/* <ul>
             <li  onClick={() => { searchProduct("MCA-NEW 1st-Sem") }}> 1st-Sem</li>
@@ -47,6 +48,38 @@ const Project = ({ productData, onAdd, cartMessage }) => {
             <li  onClick={() => { searchProduct("MBA 3rd-Sem") }} >3rd-Sem</li>
             <li  onClick={() => { searchProduct("MBA 4th-Sem") }} >4th-Sem</li>
             </ul> */}
+
+            <button className='btn-mca' onClick={() => { searchProduct("MCA Project") }}>MCA-NEW</button>
+            <ul>
+            <li>1st-Sem</li>
+            <li>2nd-Sem</li>
+            <li>3rd-Sem</li>
+            <li>4th-Sem</li>
+          
+            </ul>
+            <button className='btn-mca' onClick={() => { searchProduct("BCA") }}>BCA</button>
+            <ul>
+            <li>1st-Sem</li>
+            <li>2nd-Sem</li>
+            <li>3rd-Sem</li>
+            <li>4th-Sem</li>
+            <li>5th-Sem</li>
+            <li>6th-Sem</li>
+            </ul>
+            <button className='btn-mca' onClick={() => { searchProduct("MBA Project") }}>PGDCA-NEW</button>
+            <ul>
+            <li>1st-Sem</li>
+            <li>2nd-Sem</li>
+          
+            </ul>
+            <button className='btn-mca' onClick={() => { searchProduct("MBA Project") }}>MBA</button>
+            <ul>
+            <li>1st-Sem</li>
+            <li>2nd-Sem</li>
+            <li>3rd-Sem</li>
+            <li>4th-Sem</li>
+            </ul>
+
             <button className='btn-mca' onClick={() => { setProduct(product) }}>All</button>
             <h2>Project</h2>
             <button className='btn-mca' onClick={() => { searchProduct("Project") }}>All-Project</button>

@@ -3,7 +3,7 @@ const router = express.Router()
 const Product = require("../../schema/productSchema")
 
 
-router.get("/", (req, res) => {
+router.get("/", async(req, res) => {
     console.log(req,res,"dfads")
     Product.find()
         .then((result) => {
@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
 
         })
 })
-router.get("/Product", (req, res) => {
+router.post("/Product", (req, res) => {
 
     const product = new Product({
         Title: req.body.Title,

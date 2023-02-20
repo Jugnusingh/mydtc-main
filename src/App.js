@@ -3,7 +3,7 @@ import Navbar from './FrontEnd/Header/Navbar';
 import { Route, Routes } from 'react-router-dom'
 import Home from './FrontEnd/Home';
 import Blogs from './FrontEnd/Blogs';
-import Contact from './FrontEnd/Contact';
+import ContactUs from './FrontEnd/Contact';
 import Cart from './FrontEnd/Cart';
 import Project from './FrontEnd/Project';
 import Login from './FrontEnd/login';
@@ -16,13 +16,17 @@ import UploadBlogs from './Admin/Upload/UploadBlogs';
 import axios from 'axios';
 
 
-
 function App() {
   const [cartItems, setCartItems] = useState([])
   const [countCartItems, setCountCartItems] = useState(0)
   const [cartMessage, setCartMessage] = useState()
   const [productData, setProductData] = useState([])
+
 console.log(productData,"data coming ")
+
+  const [sliderData, setSliderData] = useState([]);
+  // console.log(sliderData,"sliderData")
+
   const onRemove = (curElemt) => {
     setCartItems((cartItems.filter((x) => {
       return x._id !== curElemt._id
@@ -66,13 +70,34 @@ console.log(productData,"data coming ")
    
   }, [])
 
+  const getSliderData = () => {
+    axios.get("http://localhost:4000/image")
+      .then((result) => {
+        console.log(result,"sliderData")
+        setSliderData(result.data.imageData)
+      }).catch(error => {
+        console.log(error, "slider Error")
+      })
+  }
+
+  useEffect(() => {
+    getSliderData()
+    // localStorage.setItem("localProductData", JSON.stringify(sliderData))
+  }, [])
+
+
+
   return (
     <div>
       <Navbar countCartItems={countCartItems} />
       <Routes>
+
         <Route exact path='/' element={<Home />} />
+
+        <Route exact path='/' element={<Home sliderData={sliderData}/>} />
+
         <Route exact path='/Blogs' element={<Blogs />} />
-        <Route exact path='/Contact' element={<Contact />} />
+        <Route exact path='/Contact' element={<ContactUs/>} />
         <Route exact path="/cart" element={<Cart cartItems={cartItems} data={productData} onRemove={onRemove} countCartItems={countCartItems} />} />
         <Route exact path="/Project" element={<Project productData={productData} onAdd={onAdd} cartMessage={cartMessage} />} />
         <Route exact path="/Login" element={<Login />} />
