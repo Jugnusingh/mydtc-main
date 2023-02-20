@@ -27,7 +27,7 @@ const Project = ({ productData, onAdd, cartMessage }) => {
             <li>4th-Sem</li>
           
             </ul>
-            <button className='btn-mca' onClick={() => { searchProduct("BCA Project") }}>BCA</button>
+            <button className='btn-mca' onClick={() => { searchProduct("BCA") }}>BCA</button>
             <ul>
             <li>1st-Sem</li>
             <li>2nd-Sem</li>
