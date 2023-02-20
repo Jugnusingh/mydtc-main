@@ -18,7 +18,7 @@ const loginRoute = require("./api/route/login")
 const ImageRoute = require("./api/route/imageSlider")
 // const uploadRoute = require("./api/route/upload")
 // const { urlencoded } = require("body-parser")
-mongoose.connect("mongodb+srv://Gazal:Gazal%4017flt@cluster0.gu7qtpr.mongodb.net/test", {
+mongoose.connect("mongodb+srv://Gazal:Gazal%4017flt@cluster0.gu7qtpr.mongodb.net/DalalTechnologies", {
     useNewUrlParser: true,
     // useCreateIndex: true,    
     useUnifiedTopology:true,
