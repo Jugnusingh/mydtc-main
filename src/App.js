@@ -66,7 +66,7 @@ function App() {
 
   useEffect(() => {
     getSliderData()
-    localStorage.setItem("localProductData", JSON.stringify(sliderData))
+    // localStorage.setItem("localProductData", JSON.stringify(sliderData))
   }, [])
 
 

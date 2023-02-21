@@ -1,12 +1,10 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import "./Index.css"
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const ImageSlider=({sliderData}) =>{
-  console.log(sliderData,"yahoo")
-
   return (
     <div>
       <Carousel>
