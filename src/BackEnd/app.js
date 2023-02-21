@@ -20,19 +20,10 @@ const ImageRoute = require("./api/route/imageSlider")
 // const uploadRoute = require("./api/route/upload")
 // const { urlencoded } = require("body-parser")
 
-mongoose.connect("mongodb+srv://Gazal:Gazal%4017flt@cluster0.gu7qtpr.mongodb.net/DalalTechnologies", {
-
-
 
 // Database connect
-mongoose.connect("mongodb://127.0.0.1:27017/DalalTechnologies",{
-    useUnifiedTopology: true,
-    useNewUrlParser: true
-  })
-mongoose.connection.on("error",(error)=>{
-    console.log("Error DB is not connected") 
 
-mongoose.connect("mongodb+srv://Gazal:Gazal%4017flt@cluster0.gu7qtpr.mongodb.net/test", {
+mongoose.connect("mongodb+srv://Gazal:Gazal%4017flt@cluster0.gu7qtpr.mongodb.net/DalalTechnologies", {
 
     useNewUrlParser: true,
     // useCreateIndex: true,    
@@ -48,14 +39,14 @@ mongoose.connection.on("connected", (connected) => {
 })
 
 
-// API
-app.use("/product",productRoute)
-app.use("/assignment",assignmentRoute)
-app.use("/login",loginRoute)
-// app.use("/upload",uploadRoute)
+// // API
+// app.use("/product",productRoute)
+// app.use("/assignment",assignmentRoute)
+// app.use("/login",loginRoute)
+// // app.use("/upload",uploadRoute)
 
 // Default API
-app.use("/", (req,res)=>{
+// app.use("/", (req,res)=>{
 
 app.use("/product", productRoute)
 app.use("/assignment", assignmentRoute)
