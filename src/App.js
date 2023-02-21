@@ -22,7 +22,7 @@ function App() {
   const [cartMessage, setCartMessage] = useState()
   const [productData, setProductData] = useState([])
   const [sliderData, setSliderData] = useState([]);
-  // console.log(sliderData,"sliderData")
+  console.log(sliderData,"sliderData")
 
   const onRemove = (curElemt) => {
     setCartItems((cartItems.filter((x) => x._id !== curElemt._id)))
@@ -66,7 +66,7 @@ function App() {
 
   useEffect(() => {
     getSliderData()
-    // localStorage.setItem("localProductData", JSON.stringify(sliderData))
+    localStorage.setItem("localProductData", JSON.stringify(sliderData))
   }, [])
 
 
