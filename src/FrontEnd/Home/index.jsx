@@ -2,7 +2,7 @@ import React from "react";
 import ImageSlider from "../ImageSlider/Index";
 
 
-const Home = ({sliderData}) => {
+const Home = () => {
   return (
     <div>
       <ImageSlider sliderData={sliderData} />
