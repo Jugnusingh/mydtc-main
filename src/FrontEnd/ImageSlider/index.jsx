@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-// import "./ImageSlider.css";
+import "./ImageSlider.css";
 
 const ImageSlider = ({ images }) => {
   console.log(images,"jai shri ram ")
