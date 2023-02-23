@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-import "./ImageSlider.css";
+// import "./ImageSlider.css";
 
 const ImageSlider = ({ images }) => {
   console.log(images,"jai shri ram ")
@@ -15,10 +15,10 @@ const ImageSlider = ({ images }) => {
   return (
     <div className="slider">
       {images.map((item) => (
-        <img className="slider-img"
+        <img
           key={item._id }
           src={item.ImgUrl}
-          // className={item._id === currentSlide ? 'active' : ''}
+          className={item._id === currentSlide ? 'active' : ''}
         />
       ))}
     </div>
