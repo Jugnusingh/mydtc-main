@@ -1,23 +1,50 @@
-.swiper {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-  
-    /* Center slide text vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
+.card-slider {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+
+.card-slider-items {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  padding-bottom: 30px;
+}
+
+.card-slider-item {
+  flex: 0 0 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  padding-bottom: 30px;
+}
+
+
+.card-slider-prev,
+.card-slider-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid black;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  padding-bottom: 30px;
+}
+
+.card-slider-prev {
+  left: 20px;
+  background-color:yellowgreen;
+}
+
+.card-slider-next {
+  right: 20px;
+  background-color:yellowgreen;
+}

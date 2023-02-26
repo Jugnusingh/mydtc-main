@@ -76,7 +76,7 @@ function App() {
     <div>
       <Navbar countCartItems={countCartItems} />
       <Routes>
-        <Route exact path='/' element={<Home image={imageData}/>} />
+        <Route exact path='/' element={<Home productData={productData} image={imageData}/>} />
         <Route exact path='/Assignments' element={<Blogs />} />
         <Route exact path='/Contact' element={<Contact />} />
         <Route exact path="/cart" element={<Cart cartItems={cartItems} data={productData} onRemove={onRemove} countCartItems={countCartItems} />} />
