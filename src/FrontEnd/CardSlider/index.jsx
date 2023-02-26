@@ -3,8 +3,6 @@ import './CardSlider.css';
 import "../../../src/index.css"
 
 const CardSlider = ({productData}) => {
-
-//   const [cards, setCards] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handlePrevClick = () => {
