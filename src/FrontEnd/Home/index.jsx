@@ -1,11 +1,14 @@
 import React from 'react'
+import CardSlider from '../CardSlider'
 import ImageSlider from '../ImageSlider'
 
-const Home = ({images}) => {
+
+const Home = ({image,productData}) => {
   return (
     <div>
-      {/* <ImageSlider   /> */}
-      <ImageSlider images={images}/>
+      <ImageSlider images={image}/>
+      <h2>New Arival </h2>
+      {/* <CardSlider data={productData}/> */}
     </div>
   )
 }

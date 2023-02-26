@@ -1,9 +1,9 @@
 import React from 'react'
 import "../../../src/index.css"
-function Card({ onAdd, product }) {
+function Card({ onAdd, productData }) {
     return (
         <>
-            {product.map((item) => {
+            {productData.map((item) => {
                 return (
                     <>
                         <div className='cards'  >

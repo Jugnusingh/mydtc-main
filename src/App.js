@@ -16,12 +16,14 @@ import axios from 'axios';
 import Blogs from './FrontEnd/Blogs';
 
 function App() {
+ 
   const [cartItems, setCartItems] = useState([])
   const [countCartItems, setCountCartItems] = useState(0)
   const [cartMessage, setCartMessage] = useState()
   const [productData, setProductData] = useState([])
   const [imageData,setImageData]=useState([])
-
+  console.log(imageData,"app.js")
+  
 
 
   const getSliderData = () => {
@@ -74,7 +76,7 @@ function App() {
     <div>
       <Navbar countCartItems={countCartItems} />
       <Routes>
-      <Route exact path='/' element={<Home images={imageData}/>} />
+        <Route exact path='/' element={<Home image={imageData}/>} />
         <Route exact path='/Assignments' element={<Blogs />} />
         <Route exact path='/Contact' element={<Contact />} />
         <Route exact path="/cart" element={<Cart cartItems={cartItems} data={productData} onRemove={onRemove} countCartItems={countCartItems} />} />

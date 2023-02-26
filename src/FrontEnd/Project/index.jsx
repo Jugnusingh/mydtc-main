@@ -60,7 +60,7 @@ const Project = ({ productData, onAdd, cartMessage }) => {
             </ul>
           </div>
           <div className='card-right-body'>
-            <Card data={productData} onAdd={onAdd} product={product} cartMessage={cartMessage} />
+            <Card data={productData} onAdd={onAdd} productData={productData} cartMessage={cartMessage} />
           </div>
         </div>
 
