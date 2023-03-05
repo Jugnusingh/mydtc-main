@@ -1,14 +1,14 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  display:flexbox;
 
 }
 
 .flip-card {
   background-color: transparent;
-  width: 300px;
-  height: 400px;
-  perspective: 1000px;
-  display: flex;
+  width: 250px;
+  height: 300px;
+  display: flex-box;
   padding-top: 10px;
   border-radius: 10px;
   
@@ -23,6 +23,7 @@ body {
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+ 
 
 }
 
@@ -64,8 +65,8 @@ padding: 5px;
 }
 
 .srcimg {
-  height: 390px;
-  width: 300px;
+  width: 250px;
+  height: 290px;
   border-radius: 10px;
 }
 

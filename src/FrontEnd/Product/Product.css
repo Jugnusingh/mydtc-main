@@ -1,15 +1,28 @@
 .card-body {
-  background: rgb(221, 206, 206);
-  width: 100%s;
+  /* background: rgb(221, 206, 206); */
+  width: 100%;
   padding-top: 10px;
   border-radius: 2px;
+  display: inline-flex-box;
+  display: flex;
 }
+.main-body{
 
+background-color: #EE7752;
+display: flex;
+width: 100%;
+  padding-top: 10px;
+  border-radius: 2px;
+
+}
 .card-right-body {
   display: flex;
   float: left;
-  width: 25%;
+  max-width: 1000%;
   padding: 0 10px;
+  width: 200px;
+  
+  
 
 }
 .card-right-body:after {
@@ -18,17 +31,13 @@
   clear: both;
 }
 
-.card-body {
-
-  display: flex;
-}
-
 .card-left-body {
   width: 15%;
   height: auto;
   margin: 25px;
   text-align: center;
   text-decoration: none;
+  
 }
 
 .card-left-body h1 {
