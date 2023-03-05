@@ -236,7 +236,7 @@
 
 
 /* project css */
-.main-body {
+/* .main-body {
   height: 1000px;
   width: auto;
   display: flex;
@@ -259,28 +259,25 @@
 }
 
 .card-body {
-  /* background: rgb(221, 206, 206); */
+  background: rgb(221, 206, 206);
   width: 100%;
   display: flex;
 
 }
 
 .card-left-body {
-  width: 15%;
+  width: 5%;
   height: 550px;
-  margin: 35px;
+  margin: 25px;
   text-align: center;
   text-decoration: none;
 
 }
 
 .card-right-body {
-
   width: 90%;
   height: 340px;
   margin: 0 12%;
-
-
 }
 
 .card-left-body h1 {
@@ -316,5 +313,5 @@ animation: gradbar 15s ease infinite;
 .btn-mca:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(224, 24, 24, 0.2);
-}
+} */
 

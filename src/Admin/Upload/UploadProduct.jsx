@@ -9,28 +9,6 @@ import "./UploadProduct.css"
 
 const UploadProduct = () => {
 
-    // const [title, setTitle] = useState("")
-    // const [num, setNum] = useState("")
-    // const [textarea, setTextarea] = useState("")
-    // const [category, setCategory] = useState("")
-    // const [image, setImage] = useState("")
-    // const [pdf, setPdf] = useState("")
-
-
-    // function addProduct() 
-    // {
-    //     console.warn(title, num, textarea, category, image, pdf);
-    // }
-
-    // const addProduct = (e) => {
-    //     console.log(e.target.title)
-    //     const value = e.target.value;
-    //     const title = e.target.title
-
-    //     setUploadData([name]=value)
-    //     console.log(uploaddata)
-    // }
-
     const submitHandler = (e) => {
 e.preventDefault()
         const Title = e.target.Title.value;
@@ -56,14 +34,6 @@ e.preventDefault()
             .catch(error => {
                 console.log(error)
             })
-
-        // const url = ""
-        // const formData = new FormData()
-        // // console.log(formData)
-        // formData.append('uploaddata,uploaddata')
-        // console.log(formData)
-
-
     }
 
     return (

@@ -1,27 +1,27 @@
 import React from 'react'
-import "../../../src/index.css"
-function Card({ onAdd, productData }) {
+import '../Card/Card.css'
+
+function Card({ onAdd, productData, jugnu }) {
     return (
         <>
             {productData.map((item) => {
                 return (
-                    <>
-                        <div className='cards'  >
-                            <div className='card'>
-                                <img src={item.Image} alt="mypic" className='card_img' />
-                                <div className='card_info'>
-                                    <span className='card_cat'>{item.Category}</span>
-                                    <h3 className='card_titel'>{item.Title}</h3>
-                                    <span className='Project_price'>{item.Price}/-</span>
-                                    <span className='Project_price'>{item.Description}/-</span>
-                                    <br>
-                                    </br>
-                                    <button className='bttn-card' onClick={() => onAdd(item)}>
-                                        Add To Cart
-                                    </button>
+                    <>  
+                    <div className='main-div-con'>          
+                        <div className="flip-card">
+                            <div className="flip-card-inner">
+                                <div className="flip-card-front">
+                                    <img className="srcimg" src={item.Image}  />
+                                </div>
+                                <div className="flip-card-back">
+                                    <h2>{item.Title}</h2>
+                                    <p>{item.Category}</p>
+                                    <p className="product-price">{item.price}</p>
+                                    <button onClick={() => onAdd(item)} className="buy-button">Buy Now</button>
                                 </div>
                             </div>
                         </div>
+                        </div>  
                     </>
                 )
             })}

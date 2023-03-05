@@ -4,7 +4,6 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './FrontEnd/Home';
 import Contact from './FrontEnd/Contact';
 import Cart from './FrontEnd/Cart';
-import Project from './FrontEnd/Project';
 import Login from './FrontEnd/login';
 import Dashboard from './Admin/Dashboard/Dashboard';
 import Order from './Admin/Order/Order';
@@ -14,6 +13,7 @@ import UploadProduct from './Admin/Upload/UploadProduct';
 import UploadBlogs from './Admin/Upload/UploadBlogs';
 import axios from 'axios';
 import Blogs from './FrontEnd/Blogs';
+import Product from './FrontEnd/Product';
 
 function App() {
  
@@ -71,7 +71,6 @@ function App() {
     getProductData()
     localStorage.setItem("localProductData", JSON.stringify(productData))
   }, [])
-
   return (
     <div>
       <Navbar countCartItems={countCartItems} />
@@ -80,7 +79,7 @@ function App() {
         <Route exact path='/Assignments' element={<Blogs />} />
         <Route exact path='/Contact' element={<Contact />} />
         <Route exact path="/cart" element={<Cart cartItems={cartItems} data={productData} onRemove={onRemove} countCartItems={countCartItems} />} />
-        <Route exact path="/Project" element={<Project productData={productData} onAdd={onAdd} cartMessage={cartMessage} />} />
+        <Route exact path="/Project" element={<Product productData={productData} onAdd={onAdd} cartMessage={cartMessage} />} />
         <Route exact path="/Login" element={<Login />} />
         <Route exact path="/Dashboard" element={<Dashboard />} />
         <Route exact path="/All_Order" element={<Order />} />
