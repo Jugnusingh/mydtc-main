@@ -1,45 +1,58 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import './CardSlider.css';
 import "../../../src/index.css"
 
-const CardSlider = ({productData}) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+
+
+const CardSlider = ({ productData }) => {
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [autoSlide, setAutoSlide] = useState(null);
+
+  const nextSlide = () => {
+    setCurrentSlide(currentSlide === productData.length - 1 ? 0 : currentSlide + 1);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(currentSlide === 0 ? productData.length - 1 : currentSlide - 1);
+  };
+
+  useEffect(() => {
+    // Start auto slide
+    setAutoSlide(setInterval(() => {
+      nextSlide();
+    }, 3000));
+
+    // Stop auto slide when the component unmounts
+    return () => clearInterval(autoSlide);
+  }, []);
 
   const handlePrevClick = () => {
-    const index = activeIndex === 0 ? productData.length - 1 : activeIndex - 1;
-    setActiveIndex(index);
+    clearInterval(autoSlide);
+    prevSlide();
   };
 
   const handleNextClick = () => {
-    const index = activeIndex === productData.length - 1 ? 0 : activeIndex + 1;
-    setActiveIndex(index);
-  };
-
+    clearInterval(autoSlide);
+    nextSlide();
+  }
   return (
-    <div className="card-slider">
-      <div className="card-slider-items" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
-        {productData.map((item) => (
-          <div className='cards'  >
-          <div className='card'>
-              <img src={item.Image} alt="mypic" className='card_img' />
-              <div className='card_info'>
-                  <span className='card_cat'>{item.Category}</span>
-                  <h3 className='card_titel'>{item.Title}</h3>
-                  <span className='Project_price'>{item.Price}/-</span>
-                  <span className='Project_price'>{item.Description}/-</span>
-              </div>
-          </div>
+    <div className="product-card-slider">
+      <button className="prev" onClick={prevSlide}>&#10094;</button>
+      <button className="next" onClick={nextSlide}>&#10095;</button>
+      <div className="slider-product">
+        {productData.map((i, _id) => (
+          <div className={_id === currentSlide ? 'slide-product active' : 'slide-product'} key={_id}>
+            <img src={i.Image} alt={i.name} />
+            <div className="product-details">
+            </div>
           </div>
         ))}
       </div>
-      <button className="card-slider-prev" onClick={handlePrevClick}>
-        Prev
-      </button>
-      <button className="card-slider-next" onClick={handleNextClick}>
-        Next
-      </button>
     </div>
   );
 };
+
+
 
 export default CardSlider;

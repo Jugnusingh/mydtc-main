@@ -16,7 +16,6 @@ const Product = ({ productData, onAdd, cartMessage }) => {
       <div className='cart-message'>
         {cartMessage}
       </div>
-      <div className='main-body'>
         <div className='card-body'>
           <div className='card-left-body'>
             <h2>Assignment</h2>
@@ -36,7 +35,7 @@ const Product = ({ productData, onAdd, cartMessage }) => {
               <li className='li-btn-mca' onClick={() => { searchProduct("BCA_5th-Sem") }}>5th-Sem</li>
               <li className='li-btn-mca' onClick={() => { searchProduct("BCA_6th-Sem") }}>6th-Sem</li>
             </ul>
-            <button className='btn-mca' onClick={() => { searchProduct("PGDCA-NEW") }}>PGDCA-NEW</button>
+            <button className='btn-mca' onClick={() =>  { searchProduct("PGDCA-NEW") }}>PGDCA-NEW</button>
             <ul>
               <li className='li-btn-mca' onClick={() => { searchProduct("PGDCA-NEW_1st-Sem") }}>1st-Sem</li>
               <li className='li-btn-mca' onClick={() => { searchProduct("PGDCA-NEW_2nd-Sem") }}>2nd-Sem</li>
@@ -58,14 +57,13 @@ const Product = ({ productData, onAdd, cartMessage }) => {
               <li>C++</li>
             </ul>
           </div>
+          <div className='card-right-parent'>
           <div className='card-right-body'>
             <Card data={productData} onAdd={onAdd} productData={productData} cartMessage={cartMessage} jugnu={product} />
-          </div>
+            </div>
+            </div>
         </div>
       </div>
-    </div>
-
-
   )
 }
 

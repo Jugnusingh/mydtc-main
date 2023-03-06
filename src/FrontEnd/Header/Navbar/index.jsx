@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-// import '../../../../src/index.css'
 import SearchBar from '../SearchBar'
+import "./Navbar.css"
 
 const Navbar = ({ countCartItems }) => {
   return (
